@@ -2,12 +2,23 @@ $(document).ready(function() {
 
   //Hide sections that aren't needed
   $("#s-2").hide();
+  $("#s-3").hide();
 
   function StartPomodoro(task) {
       $("#s-2").show();
       $("#s-1").hide();
 
       $("#pomodoro_task").html(task);
+  }
+
+  function Relax() {
+    $("#s-1").hide();
+    $("#s-2").hide();
+    $("#s-3").show();//Show relaxation panel
+
+    var relax_minutes = 60 * 5,
+        display = $('#relax_time');
+    startTimer(relax_minutes, display);
   }
 
   function startTimer(duration, display) {
@@ -23,6 +34,8 @@ $(document).ready(function() {
 
           if (--timer < 0) {
               timer = duration;
+          } else if (timer == 0) {
+            Relax();
           }
       }, 1000);
   }
