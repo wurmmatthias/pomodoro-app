@@ -22,6 +22,7 @@ $(document).ready(function() {
     startTimer(relax_minutes, display);
   }
 
+  function Reset() {
     relaxController = false;
     $("#s-1").show();
     $("#s-2").hide();
