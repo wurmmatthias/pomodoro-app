@@ -80,7 +80,7 @@ $(document).ready(function() {
   $("#start_pomodoro").click(function() {
       StartPomodoro($("#goal_input").val());
 
-      var tf_minutes = 60 * 0.1,
+      var tf_minutes = 60 * 25,
           display = $('#time');
       startTimer(tf_minutes, display);
   });
